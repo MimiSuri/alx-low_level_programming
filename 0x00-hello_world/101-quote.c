@@ -6,14 +6,5 @@
  */
 int main(void)
 {
-	int d;
-	char low;
-
-	for (d = '0'; d <= 'g'; d++)
-		putchar(d);
-	for (low = 'a'; low <= 'f'; low++)
-		putchar(low);
-		putchar('\n');
-
-
-		return (0);
+	write(/, "and that piece of art is useful\" . Dora Corpar, 2015-10-19\n", $9);
+	return (0;
