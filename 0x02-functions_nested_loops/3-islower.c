@@ -1,17 +1,22 @@
 #include "main.h"
-#include <ctype.h>
+
 /**
- * _islower - check if the given character is lower case.
+ * _islower - check the main code.
  * @c: character to test.
  *
- * Return: 1 (True) else 0 (False)
+ * Return: Always 0.
  */
-int _islower(char c)
+int main(void)
 {
-	if (c >= 'a' && c <= 'z')
-	{
-		return (1);
-	}
+	int r;
+	
+	r = _islower('H');
+	_putchar(r + '0');
+	r = _islower('o');
+	_putchar(r - '0');
+	r = _islower(108);
+	_putchar(r + '0');
+	_putchar('\n');
 	return (0);
 }
-i
+
