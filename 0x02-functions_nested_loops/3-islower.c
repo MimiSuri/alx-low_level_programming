@@ -1,27 +1,20 @@
 #include "main.h"
 
 /**
- * check the main code.
- * @c: character to test.
+ * main - check the code.
  *
  * Return: Always 0.
  */
 int main(void)
 {
-_islower('_')
-_islower('o');
-_islower(108);
-_islower('c');
-_islower('I');
-_islower('s');
-_islower(70);
-_islower(20);
-_islower('U');
-_islower('U');
-_islower('n');
-_islower(0);
-_islower('H');
-_islower('\n);
-return (0);
-}
+    int r;
 
+    r = _islower('H');
+    _putchar(r + '0');
+    r = _islower('o');
+    _putchar(r + '0');
+    r = _islower(108);
+    _putchar(r + '0');
+    _putchar('\n');
+    return (0);
+}
