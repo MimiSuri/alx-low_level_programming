@@ -11,7 +11,7 @@ int main(void)
 
 	while (*h)
 	{
-		_putchar(*h);
+		_putchar(*c);
 		h++;
 	}
 	return (0);
