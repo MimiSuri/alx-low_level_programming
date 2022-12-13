@@ -7,7 +7,8 @@
  * Return: Always 0.
  */
 int main(void)
-
+{
+_islower('_')
 _islower('o');
 _islower(108);
 _islower('c');
@@ -20,6 +21,7 @@ _islower('U');
 _islower('n');
 _islower(0);
 _islower('H');
+_islower('\n);
 return (0);
 }
 
