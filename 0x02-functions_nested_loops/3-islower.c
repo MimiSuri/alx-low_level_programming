@@ -1,14 +1,13 @@
 #include "main.h"
 
 /**
- * _islower - check the main code.
+ * check the main code.
  * @c: character to test.
  *
  * Return: Always 0.
  */
 int main(void)
 
-int r;
 _islower('o');
 _islower(108);
 _islower('c');
