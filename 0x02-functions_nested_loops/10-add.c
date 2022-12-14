@@ -1,40 +1,13 @@
-#include <stdio.h>
 #include "main.h"
 /**
- * print_to_98 - a function that prints all natural numbers from n to 98
- * user input's number prints to 98, regardless < 98 or > 98
- * @n: number input
- * Return: Always 0 (Success)
+ * add - adds two integers together
+ * @a: value to be used for sum.
+ * @b: second value to be use for sum.
+ *
+ * Return: int (Sum)
  */
-void print_to_98(int n)
+int add(int a, int b)
 {
-	if (n < 98)
-	{
-		while (n <= 98)
-		{
-			printf("%d", n);
-			if (n != 98)
-			{
-				printf(", ");
-			}
-			n++;
-		}
-	}
-	else if (n > 98)
-	{
-		while (n >= 98)
-		{
-			printf("%d", n);
-			if (n != 98)
-			{
-				printf(", ");
-			}
-			n--;
-		}
-	}
-	else
-	{
-		printf("98");
-	}
-	printf("\n");
+	return (a + b);
 }
+
