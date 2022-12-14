@@ -1,40 +1,25 @@
 #include <stdio.h>
-#include "main.h"
+
 /**
- * print_to_89 - a function that prints all natural numbers from 1 to 89
- * user input's number prints to 89, regardless < 89 or > 89
- * @n: number input
- * Return: Always 0 (Success)
+ * main - main block
+ * Description: Print the sum of even Fibonacci numbers up to a fib value
+ * not exceeding 4,000,000.
+ * Return: 0
  */
-void print_to_98(int n)
+int main(void)
 {
-	if (n < 89)
+	int i = 1, j = 2, total = 0;
+	int k;
+
+	while (j < 4000000)
 	{
-		while (n <= 88)
-		{
-			printf("%d", n);
-			if (n != 89)
-			{
-				printf(", ");
-			}
-			n++;
-		}
+		if (j % 2 == 0)
+			total += j;
+
+		k = j;
+		j += i;
+		i = k;
 	}
-	else if (n > 89)
-	{
-		while (n >= 89)
-		{
-			printf("%d", n);
-			if (n != 89)
-			{
-				printf(", ");
-			}
-			n--;
-		}
-	}
-	else
-	{
-		printf("89");
-	}
-	printf("\n");
+	printf("%d\n", total);
+	return (0);
 }
