@@ -1,16 +1,14 @@
 #include "main.h"
 #include <unistd>
 /**
- * swap_int - swaps the volumes of the integers
- * @a: integer to swap
- * @b: integer to swap
+ * swap_int - swap variable value
+ * @a: pointera
+ * @b: pointerb
  * Return: void
  */
 void swap_int(int *a, int *b)
 {
-	int n;
-
-	n = *a;
-	*a = *b;
-	*b = n;
+	*a += *b;
+	*b = *a - *b;
+	*a = *a - *b;
 }
