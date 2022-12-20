@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * reset_to_98 -main entry.
+ * reset_to_98 - main entry.
  * void: nothing
  * @n: integer pointer
  * Description: function that takes a pointer to an int as parameter
