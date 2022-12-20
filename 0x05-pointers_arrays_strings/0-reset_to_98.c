@@ -1,24 +1,22 @@
 #include <stdio.h>
-
 #include "main.h"
-
 
 
 /**
  *
- *  *reset_to_98 -main entry.
+ * reset_to_98 -main entry.
  *
- *   *void: nothing
+ * void: nothing
  *
- *    *@n: integer pointer
+ * @n: integer pointer
  *
- *     *Description:  function that takes a pointer to an int as parameter
+ * Description:  function that takes a pointer to an int as parameter
  *
- *      *and updates the value it points to to 98
+ * and updates the value it points to to 98
  *
- *       * Return: void
+ * Return: void
  *
- *        **/
+ **/
 
 void reset_to_98(int *n)
 
