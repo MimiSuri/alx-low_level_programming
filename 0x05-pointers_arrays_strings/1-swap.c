@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd>
 /**
  * swap_int - swaps the volumes of the integers
  * @a: integer to swap
