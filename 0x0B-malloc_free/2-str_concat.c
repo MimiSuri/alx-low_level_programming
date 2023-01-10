@@ -3,44 +3,53 @@
 #include "main.h"
 
 /**
- * str_concat - get ends of input and add together for size
- * @s1: input one to concat
- * @s2: input two to concat
- * Return: concat of s1 and s2
+ * _strlen - returns the length of a string
+ * @s: string s
+ * Return: length of string
+ */
+int _strlen(char *s)
+{
+	int length = 0;
+
+	while (*s)
+	{
+		s++;
+		length++;
+	}
+	return (length);
+}
+
+/**
+ * str_concat - concatenates two strings
+ * @s1: first string
+ * @s2: second string
+ * Return: concatenated strings
  */
 char *str_concat(char *s1, char *s2)
 {
-	int end1, end2, i = 0;
-	char *array;
+	char *cat, *_cat;
 
-	if (s1 == NULL || s2 == NULL)
-		s1 = s2 = "";
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 
-	for (end1 = 0; end1 <= *s1; end1++)
-	{
-	}
-
-	for (end2 = 0; end2 <= *s2; end2++)
-	{
-	}
-
-	array = malloc(sizeof(char) * (end1 + end2 + 1));
-
-	if (array == NULL)
+	cat = malloc(sizeof(char) * (_strlen(s1) + _strlen(s2)) + 1);
+	if (!cat)
 		return (NULL);
-
+	_cat = cat;
 	while (*s1)
 	{
-		array[i] = *s1;
-		i++;
+		*_cat = *s1;
+		_cat++;
 		s1++;
 	}
-
 	while (*s2)
 	{
-		array[i] = *s2;
-		i++;
+		*_cat = *s2;
+		_cat++;
 		s2++;
 	}
-	return (array);
+	*_cat = '\0';
+	return (cat);
 }
