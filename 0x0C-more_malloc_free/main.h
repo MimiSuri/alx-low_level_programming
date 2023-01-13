@@ -24,5 +24,6 @@ int get_digit(char c);
 void multiply(char *f, char *s);
 int onlyNumbers(char *c);
 char *_memset(char *s, char b, unsigned int n);
+int _atoi(char *s);
 
 #endif
