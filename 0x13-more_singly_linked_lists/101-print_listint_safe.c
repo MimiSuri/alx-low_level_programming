@@ -1,73 +1,57 @@
 #include "lists.h"
+#include <stdlib.h>
+#include <stdio.h>
+
 /**
- * free_list2 - frees a list
- * @head: head of the list
+ * find_listint_loop_pl - finds a loop in a linked list
+ *
+ * @head: linked list to search
+ *
+ * Return: address of node where loop starts/returns, NULL if no loop
  */
-void free_list2(listint_addr *head)
+listint_t *find_listint_loop_pl(listint_t *head)
 {
-	listint_addr *aux;
+	listint_t *ptr, *end;
 
-	aux = head;
-	while (head)
+	if (head == NULL)
+		return (NULL);
+
+	for (end = head->next; end != NULL; end = end->next)
 	{
-		aux = head->next;
-		free(head);
-		head = aux;
+		if (end == end->next)
+			return (end);
+		for (ptr = head; ptr != end; ptr = ptr->next)
+			if (ptr == end->next)
+				return (end->next);
 	}
-
+	return (NULL);
 }
-/**
- * add_nodeaddr - adds new nodes to list
- * @head: address new head
- * @addr: address to store
- * Return: head
- */
-listint_addr *add_nodeaddr(listint_addr **head, const listint_t *addr)
-{
-	listint_addr *new_node;
 
-	new_node = malloc(sizeof(listint_addr));
-	if (new_node == NULL)
-	{
-		printf("Error\n");
-		free_list2(*head);
-		exit(98);
-	}
-	new_node->address = addr;
-	new_node->next = *head;
-	*head = new_node;
-	return (*head);
-}
 /**
- * print_listint_safe - prints lists with loops
- * @head: address pointer head
- * Return: number of nodes
+ * print_listint_safe - prints a linked list, even if it
+ * has a loop
+ *
+ * @head: head of list to print
+ *
+ * Return: number of nodes printed
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t n = 0;
-	listint_addr *addrs, *aux;
+	size_t len = 0;
+	int loop;
+	listint_t *loopnode;
 
-	addrs = NULL;
-	while (head)
+	loopnode = find_listint_loop_pl((listint_t *) head);
+
+	for (len = 0, loop = 1; (head != loopnode || loop) && head != NULL; len++)
 	{
-		aux = addrs;
-		while (addrs)
-		{
-			if (addrs->address == head)
-			{
-				printf("-> [%p] %d\n", (void *)head, head->n);
-				free_list2(aux);
-				return (n);
-			}
-			addrs = addrs->next;
-		}
-		printf("[%p] %d\n", (void *)head, head->n);
-		addrs = aux;
-		add_nodeaddr(&addrs, head);
+		printf("[%p] %d\n", (void *) head, head->n);
+		if (head == loopnode)
+			loop = 0;
 		head = head->next;
-		n++;
 	}
-free_list2(addrs);
-return (n);
+
+	if (loopnode != NULL)
+		printf("-> [%p] %d\n", (void *) head, head->n);
+	return (len);
 }
